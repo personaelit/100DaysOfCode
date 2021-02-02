@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App.csproj", "{2A45E85E-EC1B-47F7-9F0E-98C8906CC09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "..\Util\Util.csproj", "{8E97DBFF-1EAA-4AD0-9DC0-EF6DA5ABB96B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util.Tests", "..\Util.Tests\Util.Tests.csproj", "{462B595D-037F-4BF5-B71A-F56E2B49DD6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A45E85E-EC1B-47F7-9F0E-98C8906CC09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A45E85E-EC1B-47F7-9F0E-98C8906CC09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A45E85E-EC1B-47F7-9F0E-98C8906CC09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A45E85E-EC1B-47F7-9F0E-98C8906CC09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E97DBFF-1EAA-4AD0-9DC0-EF6DA5ABB96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E97DBFF-1EAA-4AD0-9DC0-EF6DA5ABB96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E97DBFF-1EAA-4AD0-9DC0-EF6DA5ABB96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E97DBFF-1EAA-4AD0-9DC0-EF6DA5ABB96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462B595D-037F-4BF5-B71A-F56E2B49DD6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462B595D-037F-4BF5-B71A-F56E2B49DD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462B595D-037F-4BF5-B71A-F56E2B49DD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462B595D-037F-4BF5-B71A-F56E2B49DD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE7F47E5-C8F1-47AD-97AC-7503A26155BB}
+	EndGlobalSection
+EndGlobal

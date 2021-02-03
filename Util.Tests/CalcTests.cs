@@ -9,24 +9,26 @@ namespace Util.Tests
     [TestClass()]
     public class CalcTests
     {
-        [TestMethod, Description("Asserts object instantiation with a default constructor.")]
+        [TestMethod, Description("Asserts object instantiation with two decimal params.")]
         public void CalcTest()
         {
-            //NOTE: Some questions about necessity. 
-            Assert.IsNotNull(new Calc());
+            //arrange
+            Calc calc;
+            //act
+            calc = new Calc(2m, 2m);
+            //assert
+            Assert.IsNotNull(calc);
         }
 
-        //NOTE: this is a faulty test, but I am going to come back to that later.
-        [TestMethod, Description("Asserts addition increases value.")]
+        [TestMethod, Description("Asserts addition changes the value.")]
         public void Calc_Add_Test()
         {
-            //Arrange
-            var calc = new Calc();
-            //Act
-            var result = calc.Add(2m, 2m);
-            //Assert
-            Assert.IsTrue(result > 2m);
-
+            //arrange
+            var calc = new Calc(2m, 2m);
+            //act
+            var result = calc.Add();
+            //assert
+            Assert.AreNotEqual(2m, result);
         }
 
 

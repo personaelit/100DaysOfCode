@@ -13,10 +13,10 @@ namespace Util
             Validate();
         }
 
-        private void Valdiate()
+        private void Validate()
         {
             //todo: the validation
-            throw new Exception("The input is not valid.");
+            throw new ArgumentException($"The expression \"{expression}\" is not valid.");
         }
     }
 }

@@ -26,11 +26,11 @@ namespace Util.Tests
             //arrange
             ExpressionEvaluator expressionEvaluator;
             //act and assert
-            Assert.ThrowsException<Exception>(() =>
+            Assert.ThrowsException<ArgumentException>(() =>
                  expressionEvaluator = new ExpressionEvaluator("invalid string"));
         }
 
-        [TestMethod, Description("Asserts that a formated expression has no spaces.")]
+        [TestMethod, Description("Asserts that a formatted expression has no spaces.")]
         public void EE_Test_FormatHasNoSpaces()
         {
             //arrange
@@ -41,5 +41,50 @@ namespace Util.Tests
             //assert
             Assert.IsFalse(expressionEvaluator.FormattedExpression.Contains(" "));
         }
+
+        [TestMethod, Description("Asserts that an expression containg a '+' returns the Calc.Opertations.Add")]
+        public void EE_Test_ExpressionsWithPlusReturnsEnumAdd()
+        {
+            //arrange
+            ExpressionEvaluator expressionEvaluator;
+            //act
+            expressionEvaluator = new ExpressionEvaluator("2+2");
+            //assert
+            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Add);
+        }
+
+        [TestMethod, Description("Asserts that an expression containg a '-' returns the Calc.Opertations.Subtract")]
+        public void EE_Test_ExpressionsWithHyphenReturnsEnumSubtract()
+        {
+            //arrange
+            ExpressionEvaluator expressionEvaluator;
+            //act
+            expressionEvaluator = new ExpressionEvaluator("2-2");
+            //assert
+            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Subtract);
+        }
+
+        [TestMethod, Description("Asserts that an expression containg a '*' returns the Calc.Opertations.Multiply")]
+        public void EE_Test_ExpressionsWithAsteriskReturnsEnumMultiply()
+        {
+            //arrange
+            ExpressionEvaluator expressionEvaluator;
+            //act
+            expressionEvaluator = new ExpressionEvaluator("2*2");
+            //assert
+            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Multipy);
+        }
+
+        [TestMethod, Description("Asserts that an expression containg a '/' returns the Calc.Opertations.Multiply")]
+        public void EE_Test_ExpressionsWithForwardSlashReturnsEnumDivide()
+        {
+            //arrange
+            ExpressionEvaluator expressionEvaluator;
+            //act
+            expressionEvaluator = new ExpressionEvaluator("2/2");
+            //assert
+            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Divide);
+        }
+
     }
 }

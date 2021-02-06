@@ -6,6 +6,8 @@ namespace Util
 {
     public class Calc
     {
+        public enum Operations { Add, Subtract, Multipy, Divide }
+
         readonly decimal v1, v2;
         public Calc(decimal value1, decimal value2)
         {

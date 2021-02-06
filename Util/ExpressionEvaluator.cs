@@ -5,17 +5,34 @@ using System.Text.RegularExpressions;
 
 namespace Util
 {
-    public class ExpressionEvaluator
+    public class ExpressionEvaluator : IExpressionEvaluator
     {
         string _expression;
 
         public string FormattedExpression { get; private set; }
+        public bool IsValidExpression { get; private set; }
+
+        public Calc.Operations Operation { get; set;}
 
         public ExpressionEvaluator(string expression)
         { 
             _expression = expression;
+            //WARNING: Straightline code.
             Format();
             Validate();
+            //TODO: Tokenize here
+            GetOperator();
+        }
+
+        private void GetOperator()
+        {
+            //QUICK HACK: string.contains.
+            //TODO: Use the tokens.
+            if (_expression.Contains("+"))  Operation = Calc.Operations.Add;
+            if (_expression.Contains("-")) Operation = Calc.Operations.Subtract;
+            if (_expression.Contains("*")) Operation = Calc.Operations.Multipy;
+            if (_expression.Contains("/")) Operation = Calc.Operations.Divide;
+
         }
 
         private void Format()

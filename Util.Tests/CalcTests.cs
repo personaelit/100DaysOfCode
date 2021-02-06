@@ -30,7 +30,5 @@ namespace Util.Tests
             //assert
             Assert.AreNotEqual(2m, result);
         }
-
-
     }
 }

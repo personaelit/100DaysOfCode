@@ -6,6 +6,9 @@ namespace App
     {
         static void Main(string[] args)
         {
+            //round one - we are going to support simple arthimetic, +,-,*/.
+            //maybe someday maybe never - multi-step expressions using order of operations
+
             Console.WriteLine("Welcome to simple calc!");
             Console.WriteLine("Try some basic math.");
             Console.WriteLine("\"exit\" to exit.");
@@ -17,23 +20,9 @@ namespace App
                     break;
                 }
 
-                var operator = GetOperator(input);
-
-                //round one - we are going to support simple addition.
-                //round two - subtraction
-                //round three - multiplication
-                //round four - wager a guess - oh yes, division.
-                //bonus round - simple expressions using order of operations
-
-
+                Util.Calc()
 
             }
-
-        }
-
-        private static object GetOperator(string input)
-        {
-            throw new NotImplementedException();
         }
     }
 }

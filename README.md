@@ -1,8 +1,6 @@
 #100DaysOfCode
 
-Day 1: Doing the thing. 
-
-First project is to create a basic utility app (calculator) using TDD.
+Day 1: Doing the thing. First project is to create a basic utility app (calculator) using TDD.
 
 Day 2: TDD is both frustrating and fun.
 
@@ -11,3 +9,7 @@ Day 3: Didn't write a single line, but thought a lot. There are some cool librar
 Day 4: Really got into TDD. Forgot to commit.
 
 Day 5: It's a Friday and I'm tired but I did it.
+
+Day 6: Great night - programmed with O.
+
+Day 7: Phoned it in a bit. Superbowl Sunday.

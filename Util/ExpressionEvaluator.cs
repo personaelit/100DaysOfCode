@@ -7,35 +7,38 @@ namespace Util
 {
     public class ExpressionEvaluator : IExpressionEvaluator
     {
+        public enum Operations { Add, Subtract, Multipy, Divide }
+
         string _expression;
 
         public string FormattedExpression { get; private set; }
+
         public bool IsValidExpression { get; private set; }
 
-        public Calc.Operations Operation { get; set;}
+        public Operations Operation { get; private set;}
 
         public ExpressionEvaluator(string expression)
         { 
             _expression = expression;
             //WARNING: Straightline code.
-            Format();
-            Validate();
+            format();
+            validate();
             //TODO: Tokenize here
-            GetOperator();
+            setOperator();
         }
 
-        private void GetOperator()
+        private void setOperator()
         {
             //QUICK HACK: string.contains.
             //TODO: Use the tokens.
-            if (_expression.Contains("+"))  Operation = Calc.Operations.Add;
-            if (_expression.Contains("-")) Operation = Calc.Operations.Subtract;
-            if (_expression.Contains("*")) Operation = Calc.Operations.Multipy;
-            if (_expression.Contains("/")) Operation = Calc.Operations.Divide;
+            if (_expression.Contains("+"))  Operation = Operations.Add;
+            if (_expression.Contains("-")) Operation = Operations.Subtract;
+            if (_expression.Contains("*")) Operation = Operations.Multipy;
+            if (_expression.Contains("/")) Operation = Operations.Divide;
 
         }
 
-        private void Format()
+        private void format()
         {
             _expression = _expression.Replace(" ", "");
             FormattedExpression = _expression;
@@ -45,7 +48,7 @@ namespace Util
         /// Validates the epression. For the sake of this exercise a valid expression matches:
         /// [number][+|-|*|/][number]
         /// </summary>
-        private void Validate()
+        private void validate()
         {
             //CONSIDER: instead of throw, use a TryParse pattern.
             Regex regex = new Regex(@"\d*[+-/*]\d*");
@@ -55,12 +58,13 @@ namespace Util
             }
         }
 
-        private void Tokenizer()
+        private void tokenizer()
         {
-            for(int i = 0; i<_expression.Length; i++)
-            {
+            throw new NotImplementedException();
+            //for(int i = 0; i<_expression.Length; i++)
+            //{
 
-            }
+            //}
         }
     }
 }

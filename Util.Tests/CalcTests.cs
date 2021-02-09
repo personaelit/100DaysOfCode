@@ -9,13 +9,13 @@ namespace Util.Tests
     [TestClass()]
     public class CalcTests
     {
-        [TestMethod, Description("Asserts object instantiation with two decimal params.")]
-        public void CalcTest()
+        [TestMethod, Description("Asserts object instantiation with IExpressionEvaluator param.")]
+        public void Calc_Constructor_Test()
         {
             //arrange
-            Calc calc;
+            ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator("2+2");
             //act
-            calc = new Calc(2m, 2m);
+            Calc calc = new Calc(expressionEvaluator);
             //assert
             Assert.IsNotNull(calc);
         }
@@ -23,12 +23,11 @@ namespace Util.Tests
         [TestMethod, Description("Asserts addition changes the value.")]
         public void Calc_Add_Test()
         {
+            //TODO: replace this test with "CanPerformCalculation" and so on.
+            throw new NotImplementedException()
             //arrange
-            var calc = new Calc(2m, 2m);
             //act
-            var result = calc.Add();
             //assert
-            Assert.AreNotEqual(2m, result);
         }
     }
 }

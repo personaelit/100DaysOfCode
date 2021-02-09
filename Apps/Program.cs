@@ -1,4 +1,5 @@
 ﻿using System;
+using Util;
 
 namespace App
 {
@@ -20,7 +21,8 @@ namespace App
                     break;
                 }
 
-                Util.Calc()
+                ExpressionEvaluator evaluator = new ExpressionEvaluator(input);
+                var foo = new Calc(evaluator);
 
             }
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Util;
+using static Util.ExpressionEvaluator;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -50,7 +51,7 @@ namespace Util.Tests
             //act
             expressionEvaluator = new ExpressionEvaluator("2+2");
             //assert
-            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Add);
+            Assert.IsTrue(expressionEvaluator.Operation == Operations.Add);
         }
 
         [TestMethod, Description("Asserts that an expression containg a '-' returns the Calc.Opertations.Subtract")]
@@ -61,7 +62,7 @@ namespace Util.Tests
             //act
             expressionEvaluator = new ExpressionEvaluator("2-2");
             //assert
-            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Subtract);
+            Assert.IsTrue(expressionEvaluator.Operation == Operations.Subtract);
         }
 
         [TestMethod, Description("Asserts that an expression containg a '*' returns the Calc.Opertations.Multiply")]
@@ -72,7 +73,7 @@ namespace Util.Tests
             //act
             expressionEvaluator = new ExpressionEvaluator("2*2");
             //assert
-            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Multipy);
+            Assert.IsTrue(expressionEvaluator.Operation == Operations.Multipy);
         }
 
         [TestMethod, Description("Asserts that an expression containg a '/' returns the Calc.Opertations.Multiply")]
@@ -83,8 +84,18 @@ namespace Util.Tests
             //act
             expressionEvaluator = new ExpressionEvaluator("2/2");
             //assert
-            Assert.IsTrue(expressionEvaluator.Operation == Calc.Operations.Divide);
+            Assert.IsTrue(expressionEvaluator.Operation == Operations.Divide);
         }
 
+        [TestMethod, Description("Asserts that the left operand can be assigned.")]
+        public void EE_Text_LeftOperandAssignment()
+        {
+            //arrange
+            IExpressionEvaluator evaluator;
+            //act
+            evaluator = new ExpressionEvaluator("2+2");
+            //assert
+            evaluator.Left = 2m;
+        }
     }
 }

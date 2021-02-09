@@ -13,3 +13,5 @@ Day 5: It's a Friday and I'm tired but I did it.
 Day 6: Great night - programmed with O.
 
 Day 7: Phoned it in a bit. Superbowl Sunday.
+
+Day 8: TDD is hard but oh so good. Working with interfaces. 

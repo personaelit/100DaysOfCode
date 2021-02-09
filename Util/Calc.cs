@@ -6,19 +6,15 @@ namespace Util
 {
     public class Calc
     {
-        public enum Operations { Add, Subtract, Multipy, Divide }
-
-        readonly decimal v1, v2;
-        public Calc(decimal value1, decimal value2)
+        IExpressionEvaluator _expressionEvaluator;
+        public Calc(IExpressionEvaluator expressionEvaluator)
         {
-            v1 = value1;
-            v2 = value2;
+            _expressionEvaluator = expressionEvaluator;
         }
 
-        public decimal Add()
+        public void PerformCalulation()
         {
-            return v1 + v2;
-        }
 
+        }
     }
 }

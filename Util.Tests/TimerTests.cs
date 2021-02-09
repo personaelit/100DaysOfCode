@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Util.Tests
 {
-    [TestClass()]
+    [TestClass, Ignore("")]
     public class TimerTests
     {
         [TestMethod()]

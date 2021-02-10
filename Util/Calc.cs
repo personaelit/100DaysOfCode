@@ -12,9 +12,22 @@ namespace Util
             _expressionEvaluator = expressionEvaluator;
         }
 
-        public void PerformCalulation()
+        public decimal PerformCalulation()
         {
-
+            switch (_expressionEvaluator.Operation)
+            {
+                case ExpressionEvaluator.Operations.Add:
+                    break;
+                case ExpressionEvaluator.Operations.Subtract:
+                    break;
+                case ExpressionEvaluator.Operations.Multipy:
+                    break;
+                case ExpressionEvaluator.Operations.Divide:
+                    break;
+                default:
+                    break;
+            }
+            throw new NotImplementedException();
         }
     }
 }

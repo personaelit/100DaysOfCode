@@ -20,14 +20,16 @@ namespace Util.Tests
             Assert.IsNotNull(calc);
         }
 
-        [TestMethod, Description("Asserts addition changes the value.")]
+        [TestMethod, Description("Asserts calculation changes the value.")]
         public void Calc_Add_Test()
         {
-            //TODO: replace this test with "CanPerformCalculation" and so on.
-            throw new NotImplementedException()
             //arrange
+            Calc calc = new Calc(new ExpressionEvaluator("2.2*100"));
             //act
+            calc.PerformCalulation();
             //assert
+            //TODO: What do we do about indempotent operations???
+            Assert.AreNotEqual(calc.Left, calc.Result, "");
         }
     }
 }

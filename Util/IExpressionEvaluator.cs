@@ -10,7 +10,11 @@ namespace Util
 
         public bool IsValidExpression { get; }
 
-        //public void GetOperator(out Calc.Operations @enum);
+        public ExpressionEvaluator.Operations Operation { get; }
+
+        public decimal Left { get; }
+
+        public decimal Right { get; }
 
     }
 }

@@ -87,15 +87,48 @@ namespace Util.Tests
             Assert.IsTrue(expressionEvaluator.Operation == Operations.Divide);
         }
 
-        [TestMethod, Description("Asserts that the left operand can be assigned.")]
-        public void EE_Text_LeftOperandAssignment()
+        [TestMethod, Description("Asserts that the left operand can be assigned from a number without a decimal place.")]
+        public void EE_Text_LeftOperandAssignmentWithoutDecimal()
         {
             //arrange
             IExpressionEvaluator evaluator;
             //act
             evaluator = new ExpressionEvaluator("2+2");
             //assert
-            evaluator.Left = 2m;
+            Assert.AreEqual(evaluator.Left,2m, "Left hand assignment did not match input.");
+        }
+
+        [TestMethod, Description("Asserts that the left operand can be assigned from a number with a decimal place.")]
+        public void EE_Text_LeftOperandAssignmentWithDecimal()
+        {
+            //arrange
+            IExpressionEvaluator evaluator;
+            //act
+            evaluator = new ExpressionEvaluator("2.2-2");
+            //assert
+            Assert.AreEqual(evaluator.Left, 2.2m, "Left hand assignment did not match input.");
+        }
+
+        [TestMethod, Description("Asserts that the right operand can be assigned from a number without a decimal place.")]
+        public void EE_Text_RightOperandAssignmentWithoutDecimal()
+        {
+            //arrange
+            IExpressionEvaluator evaluator;
+            //act
+            evaluator = new ExpressionEvaluator("7*2");
+            //assert
+            Assert.AreEqual(evaluator.Right, 2m, "Right hand assignment did not match input.");
+        }
+
+        [TestMethod, Description("Asserts that the right operand can be assigned from a number with a decimal place.")]
+        public void EE_Text_RightOperandAssignmentWithDecimal()
+        {
+            //arrange
+            IExpressionEvaluator evaluator;
+            //act
+            evaluator = new ExpressionEvaluator("2.2/2.89");
+            //assert
+            Assert.AreEqual(evaluator.Right, 2.89m, "Right hand assignment did not match input.");
         }
     }
 }

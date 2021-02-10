@@ -15,7 +15,11 @@ namespace Util
 
         public bool IsValidExpression { get; private set; }
 
-        public Operations Operation { get; private set;}
+        public decimal Left { get; private set; }
+
+        public decimal Right { get; private set; }
+
+        public Operations Operation => getOperator();
 
         public ExpressionEvaluator(string expression)
         { 
@@ -23,19 +27,17 @@ namespace Util
             //WARNING: Straightline code.
             format();
             validate();
-            //TODO: Tokenize here
-            setOperator();
+            setOperands();
         }
 
-        private void setOperator()
+        private Operations getOperator()
         {
             //QUICK HACK: string.contains.
-            //TODO: Use the tokens.
-            if (_expression.Contains("+"))  Operation = Operations.Add;
-            if (_expression.Contains("-")) Operation = Operations.Subtract;
-            if (_expression.Contains("*")) Operation = Operations.Multipy;
-            if (_expression.Contains("/")) Operation = Operations.Divide;
-
+            if (_expression.Contains("+"))  return Operations.Add;
+            if (_expression.Contains("-")) return Operations.Subtract;
+            if (_expression.Contains("*")) return Operations.Multipy;
+            //if (_expression.Contains("/")) return Operations.Divide;
+            return Operations.Divide;
         }
 
         private void format()
@@ -58,13 +60,17 @@ namespace Util
             }
         }
 
-        private void tokenizer()
+        private void setOperands()
         {
-            throw new NotImplementedException();
-            //for(int i = 0; i<_expression.Length; i++)
-            //{
-
-            //}
+            char[] operators = new char[] { '+', '-', '*', '/' };
+            foreach (var @operator in operators)
+            {
+                if (_expression.IndexOf(@operator) > -1)
+                {
+                    Left = decimal.Parse(_expression.Split(@operator)[0]);
+                    Right = decimal.Parse(_expression.Split(@operator)[1]);
+                }
+            }
         }
     }
 }

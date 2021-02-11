@@ -13,16 +13,32 @@ namespace App
             Console.WriteLine("Welcome to simple calc!");
             Console.WriteLine("Try some basic math.");
             Console.WriteLine("\"exit\" to exit.");
+
             while (true)
             {
+                //Console.ResetColor();
                 var input = Console.ReadLine().ToLower();
                 if (input == "exit")
                 {
                     break;
                 }
 
-                ExpressionEvaluator evaluator = new ExpressionEvaluator(input);
-                var foo = new Calc(evaluator);
+                try
+                {
+                    ExpressionEvaluator evaluator = new ExpressionEvaluator(input);
+                    Console.WriteLine(new Calc(evaluator).PerformCalulation());
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Error: Cannot divide by zero per laws of the universe.");
+                    Console.BackgroundColor = have fun with this
+                    Console.ForegroundColor = have fun with this
+                    
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
 
             }
         }

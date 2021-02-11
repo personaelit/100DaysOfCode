@@ -36,7 +36,6 @@ namespace Util
             if (_expression.Contains("+"))  return Operations.Add;
             if (_expression.Contains("-")) return Operations.Subtract;
             if (_expression.Contains("*")) return Operations.Multipy;
-            //if (_expression.Contains("/")) return Operations.Divide;
             return Operations.Divide;
         }
 

@@ -17,17 +17,20 @@ namespace Util
             switch (_expressionEvaluator.Operation)
             {
                 case ExpressionEvaluator.Operations.Add:
-                    break;
+                    return _expressionEvaluator.Left + _expressionEvaluator.Right;
                 case ExpressionEvaluator.Operations.Subtract:
-                    break;
+                    return _expressionEvaluator.Left - _expressionEvaluator.Right;
                 case ExpressionEvaluator.Operations.Multipy:
-                    break;
+                    return _expressionEvaluator.Left * _expressionEvaluator.Right;
                 case ExpressionEvaluator.Operations.Divide:
-                    break;
+                    if (_expressionEvaluator.Right == 0)
+                    {
+                        throw new DivideByZeroException();
+                    }
+                    return _expressionEvaluator.Left / _expressionEvaluator.Right;
                 default:
-                    break;
+                    throw new InvalidOperationException("Unsupported operation.");
             }
-            throw new NotImplementedException();
         }
     }
 }

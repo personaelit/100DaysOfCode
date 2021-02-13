@@ -19,3 +19,7 @@ Day 8: TDD is hard but oh so good. Working with interfaces.
 Day 9: TDD is ready to find bugs before you write them.  
 
 Day 10: 10 Days straight!!!
+
+Day 11: Finished up Calc as much as is needed.
+
+Day 12: ConsoleExpressions

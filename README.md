@@ -23,3 +23,5 @@ Day 10: 10 Days straight!!!
 Day 11: Finished up Calc as much as is needed.
 
 Day 12: ConsoleExpressions
+
+Day 13: Rudimentary Battleship Style Console Game POC

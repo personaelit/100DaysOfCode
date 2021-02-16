@@ -25,3 +25,5 @@ Day 11: Finished up Calc as much as is needed.
 Day 12: ConsoleExpressions
 
 Day 13: Rudimentary Battleship Style Console Game POC
+
+Day 14: Backed off the game until I build a library of effects.

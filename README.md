@@ -27,3 +27,5 @@ Day 12: ConsoleExpressions
 Day 13: Rudimentary Battleship Style Console Game POC
 
 Day 14: Backed off the game until I build a library of effects.
+
+Day 15: Started TDD again, which slows things down in the immediate, but pays off later. I have questions about an appropriate way to test a console app.

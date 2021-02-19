@@ -31,3 +31,5 @@ Day 14: Backed off the game until I build a library of effects.
 Day 15: Started TDD again, which slows things down in the immediate, but pays off later. I have questions about an appropriate way to test a console app.
 
 Day 16: I'm tired.  
+
+Day 17: Switched to site generator project.
